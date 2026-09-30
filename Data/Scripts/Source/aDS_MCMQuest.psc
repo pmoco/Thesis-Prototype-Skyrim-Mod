@@ -1,0 +1,1 @@
+Scriptname aDS_MCMQuest extends MCM_ConfigBase

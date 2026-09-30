@@ -1,0 +1,14 @@
+Scriptname ccBGSSSE001_SetStageOnActivate extends ReferenceAlias  
+{On alias activation checks for "StageToLookFor" and if it's set, will set the quest to "StageToSet".}
+
+int Property StageToLookFor Auto
+{The quest must be in this stage for the script to activate}
+int Property StageToSet Auto
+{The stage to set the quest to when activated}
+
+Event OnActivate(ObjectReference akActionRef)
+	Quest myQuest = GetOwningQuest()
+	If myQuest.GetStage() == StageToLookFor
+		myQuest.SetStage(StageToSet)	
+	Endif
+EndEvent

@@ -1,0 +1,5 @@
+scriptname ccBGSSSE001_QuestEventCatchData extends ccBGSSSE001_CatchData
+
+int function getCatchType()
+	return ccBGSSSE001_CatchTypeQuestEvent.GetValueInt()
+endFunction

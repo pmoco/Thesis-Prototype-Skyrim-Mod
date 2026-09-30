@@ -1,0 +1,1 @@
+Scriptname Thesis_CombatStateScriot extends ReferenceAlias  
