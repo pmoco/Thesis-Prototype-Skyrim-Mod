@@ -10,6 +10,9 @@ ThesisStateController Property Controller Auto
 Float Property CheckInterval = 1.0 Auto
 Float Property SaveDelay = 0.5 Auto
 
+
+String Property checkPointName = "Autosave" Auto
+
 ;========================================
 ; Variables
 
@@ -24,7 +27,7 @@ Function TriggerAutoSave()
     ; small delay to avoid saving mid-activation
     Utility.Wait(SaveDelay)
 
-    Debug.Trace("[AUTO SAVE] Triggered")
+    Debug.Trace("[AUTO SAVE] Triggered  ___ " +  checkpointName  )
     Game.RequestAutoSave()
 
 EndFunction

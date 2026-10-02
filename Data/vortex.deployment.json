@@ -1,0 +1,35 @@
+{
+  "instance": "5ef2359b-f69d-49d6-9986-368d007b75ab",
+  "version": 1,
+  "deploymentMethod": "hardlink_activator",
+  "gameId": "skyrimse",
+  "deploymentTime": 1779469133306,
+  "stagingPath": "C:\\Users\\mcmon\\AppData\\Roaming\\Vortex\\skyrimse\\mods",
+  "targetPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Skyrim Special Edition\\Data",
+  "files": [
+    {
+      "relPath": "skyrim64_test.ini",
+      "source": "CK64Fixes Release 3.2-20061-3-2-1616560054",
+      "target": "",
+      "time": 1616472340000
+    },
+    {
+      "relPath": "tbb.dll",
+      "source": "CK64Fixes Release 3.2-20061-3-2-1616560054",
+      "target": "",
+      "time": 1616530920000
+    },
+    {
+      "relPath": "tbbmalloc.dll",
+      "source": "CK64Fixes Release 3.2-20061-3-2-1616560054",
+      "target": "",
+      "time": 1616530926000
+    },
+    {
+      "relPath": "winhttp.dll",
+      "source": "CK64Fixes Release 3.2-20061-3-2-1616560054",
+      "target": "",
+      "time": 1616530962000
+    }
+  ]
+}

@@ -9,7 +9,9 @@ int SoundInstance = -1
 
 bool property useOnce = FALSE auto
 
-Event OnCellLoad()
+Event OnLoad()
+
+	Utility.wait(1.0)
 	
 	StartLinked()
 	
@@ -36,9 +38,9 @@ Function StartAmbientSound()
 	
    	
 
-
-       SoundInstance = Tick .Play(Self)
-
+	if Tick
+       	SoundInstance = Tick .Play(Self)
+	endif
 	
 	 ; Stop linked sounds
    	 int i = 0
@@ -57,8 +59,11 @@ EndFunction
 
 Function StartLinked()
 
-    
-       SoundInstance = Tick.Play(Self)
+    	if Tick 
+		if SoundInstance <0 
+       		SoundInstance = Tick.Play(Self)
+		endif 
+	endif 
 
 EndFunction
 

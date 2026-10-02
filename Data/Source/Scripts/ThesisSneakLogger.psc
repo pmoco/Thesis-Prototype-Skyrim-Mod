@@ -42,6 +42,8 @@ Function StartLogging()
     if WasSneaking
         SneakStartTime = Utility.GetCurrentRealTime()
     endif
+	
+    loggin= true 
 
     RegisterForSingleUpdate(UpdateInterval)
 
@@ -49,16 +51,41 @@ EndFunction
 
 Function EndLogging() 
 	
-	
-	WasSneaking = false
-	Float duration = Utility.GetCurrentRealTime() - SneakStartTime
-	TotalSneakTime += duration
+	if ( WasSneaking ) 
+		Float duration = Utility.GetCurrentRealTime() - SneakStartTime
+		TotalSneakTime += duration
+		Logger.Log("Exited Sneak TOTAL COUNT | Duration = " + duration + " s | Total = " + TotalSneakTime + " s",     "{SNEAK}" , writeToScreen)	
+	else
+		Logger.Log("Total Count  Sneak | | Total = " + TotalSneakTime + " s",     "{SNEAK}" , writeToScreen)	
+	endif 
 
-	Logger.Log("Exited Sneak | Duration = " + duration + " s | Total = " + TotalSneakTime + " s",     "{SNEAK}" , writeToScreen)		
+
+	
 	Logger.Log("Exited Sneak No More Logging  ||||||||||||||||||||||||||||||||||" , writeToScreen)		
-	loggin = true
+	loggin = false
 
 EndFunction 
+
+
+
+
+Function DeathLog ()
+
+	if ( WasSneaking )
+		Float duration = Utility.GetCurrentRealTime() - SneakStartTime
+		TotalSneakTime += duration
+		Logger.Log("Exited Sneak | Duration = " + duration + " s | Total = " + TotalSneakTime + " s",     "{SNEAK}" , writeToScreen)	
+	endif
+
+	Logger.Log("PLAYER DEATH XXX Sneak || Total = " + TotalSneakTime + " s",     "{SNEAK}" , writeToScreen)		
+
+
+
+EndFunction
+
+
+
+
 
 
 Event OnUpdate()
